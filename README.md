@@ -54,4 +54,9 @@ We will test your application in Chrome. Please use code that would work in any 
 * Surprise us!
 
 
+---------------------------------------
+
+### Todo
+* more robust unit test
+
 
