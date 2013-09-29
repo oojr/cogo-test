@@ -1,3 +1,4 @@
+
 function RankCtrl($scope){
 	$scope.players =
 	[               
@@ -6,7 +7,8 @@ function RankCtrl($scope){
 		{name:'George', score:'58 pts', rank:3},
 		{name:'Ringo', score: '73 pts', rank:1}]
 
-	$scope.predicate= "+rank"
+	$scope.predicate= "+rank";
+	
 
 	$scope.addPlayer = function(){
 
@@ -26,17 +28,17 @@ function RankCtrl($scope){
 	    } 
 
         
-       
+       //Standard Competition Ranking
+       //http://en.wikipedia.org/wiki/Ranking#Standard_competition_ranking_.28.221224.22_ranking.29
+
         position = 1;
-       
-	    
 	    
 	    angular.forEach($scope.players, function(player){
 	    	
 	    	if(dartIntScore > parseInt(player.score)){
 	    		player.rank +=1;
 	    		position +=0;
-	    		console.log($scope.players)
+
            }
 	    	else if(dartIntScore < parseInt(player.score)){
 	    		player.rank +=0;
@@ -45,13 +47,8 @@ function RankCtrl($scope){
 
 
 	    })
-
-	    
-
-	    
          
 		$scope.players.push({name:player, score:dartScore, rank:position} );
-		
 
 		$scope.playerText =" ";
 	}
@@ -60,3 +57,4 @@ function RankCtrl($scope){
 		$scope.players = [];
 	}
 }
+

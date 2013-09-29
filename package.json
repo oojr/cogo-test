@@ -1,0 +1,22 @@
+{
+  "name": "cogo-test",
+  "version": "0.0.0",
+  "description": "CogoLabs UI Test",
+  "main": "",
+  "scripts": {
+    "test": "karma start --single-run --no-auto-watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/oojr/cogo-test.git"
+  },
+  "author": "Olajide Jr <o.ogundipejr@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "karma": "~0.10",
+    "karma-jasmine": "*",
+    "karma-chrome-launcher": "*",
+    "karma-firefox-launcher": "*",
+    "karma-ng-html2js-preprocessor": "*"
+  }
+}

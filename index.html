@@ -5,44 +5,60 @@
     <title>CogoTest</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" >
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
-
+    <script src="http://code.angularjs.org/1.1.5/angular.js"></script>
+    <script src="http://use.edgefonts.net/lato:n1,i1.js"></script> 
     <link rel="stylesheet" href="css/main.css">
     <script src="js/main.js"></script>
   </head>
   <body>
     <div class="container" ng-controller="RankCtrl">
-    <h1>Rankings</h1>
-    <input type="text">
-    <br>
-    <button id="add">Add To Rankings</button>
+    <div class= "header">
+    <h1>CogoLabs UI Test</h1>
+    <a class="pure-button github-link" href="http://github.com/oojr/cogo-test"><i class="icon-github"></i> View on Github</a>
+    
+    </div>
+    
+    
 
     
     <div class="pure-g-r">
-        <div class="pure-u-1-2">
+        <div class= "pure-u-1">
+
+        </div>
+        <div class="pure-u-1-2 gray-bg">
+            <div class="add-player">
                     <h2>Add Player</h2>
+
                 
                     <input type="text" ng-model="playerText" class="pure-input" placeholder="Name, Score">
                         <button ng-click="addPlayer()" 
                                 class="pure-button pure-button-primary">
                             <i class="icon-plus-sign"></i> 
                             Add to Rankings</button>
+            </div>
                    
         </div>
-        <div class="pure-u-1-2">
-        <h2> Scores</h2> <button ng-click="clearRank()"
+        <div class="pure-u-1-2 gray-bg">
+            
+        <h2 class="ranking-text">Rankings</h2>
+         <button ng-click="clearRank()"
                                  class="pure-button pure-button-error">
                             <i class="icon-trash"></i> 
                             Clear Rankings</button>
+                            
         <ul id="rankings" >
-            <li ng-repeat="player in players | orderBy:predicate" >
+            <li ng-animate="'animate'" ng-repeat="player in players | orderBy:predicate" class="my-repeat-animation" >
               {{player.rank}}.  {{player.name}}, {{player.score}} 
             </li>
 
         </ul>
 
+        
+    </div>
         </div>
-        </div>
+        <div class= "footer">
+    <h2>Olajide Ogundipe Jr</h2>
+    </div>
 
 </div>
     <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> -->
