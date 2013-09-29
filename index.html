@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app>
   <head>
     <meta charset="utf-8">
     <title>CogoTest</title>
@@ -8,29 +8,45 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
 
     <link rel="stylesheet" href="css/main.css">
+    <script src="js/main.js"></script>
   </head>
   <body>
-    <div class="container">
+    <div class="container" ng-controller="RankCtrl">
     <h1>Rankings</h1>
     <input type="text">
     <br>
     <button id="add">Add To Rankings</button>
 
-    <ul id="rankings"></ul>
-    <button id="clear">Clear Rankings</button>
-    <form class="pure-form">
-    <fieldset>
-        <legend>A compact inline form</legend>
+    
+    <div class="pure-g-r">
+        <div class="pure-u-1-2">
+                    <h2>Add Player</h2>
+                
+                    <input type="text" ng-model="playerText" class="pure-input" placeholder="Name, Score">
+                        <button ng-click="addPlayer()" 
+                                class="pure-button pure-button-primary">
+                            <i class="icon-plus-sign"></i> 
+                            Add to Rankings</button>
+                   
+        </div>
+        <div class="pure-u-1-2">
+        <h2> Scores</h2> <button ng-click="clearRank()"
+                                 class="pure-button pure-button-error">
+                            <i class="icon-trash"></i> 
+                            Clear Rankings</button>
+        <ul id="rankings" >
+            <li ng-repeat="player in players | orderBy:predicate" >
+              {{player.rank}}.  {{player.name}}, {{player.score}} 
+            </li>
 
-        <input type="text" placeholder="Name, Score">
+        </ul>
 
+        </div>
+        </div>
 
-        <button type="submit" class="pure-button pure-button-primary"><i class="icon-plus-sign"></i> Add to Rankings</button>
-    </fieldset>
-</form>
 </div>
     <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> -->
     <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.0.0/lodash.min.js"></script> -->
-    <script src="js/main.js"></script>
+    
   </body>
 </html>
