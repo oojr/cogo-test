@@ -1,4 +1,4 @@
-body{
+body, h1, h2{
 	font-family: lato, sans-serif;
 }
 .header{
@@ -6,6 +6,7 @@ body{
 	border-bottom: 1px solid #eee;
 	padding-bottom: 20px;
 }
+
 .footer{
 	text-align: center;
 	border-top: 1px solid #eee;
@@ -19,17 +20,13 @@ font-family: lato, sans-serif;
 .add-player{
 	text-align: center;
 	color: #0078e7;
+	font-family: lato, sans-serif;
 }
 .ranking-text{
-	color: rgb(202, 60, 60);;
+	color: rgb(202, 60, 60);
+	font-family: lato, sans-serif;
 }
-.container{
-    max-width: 1170px;
-    margin-right: auto;
-	margin-left: auto;
-	padding-left: 15px;
-	padding-right: 15px;
-}
+
 #rankings{
 	list-style-type: none;
 	font-size: 2em;
@@ -86,12 +83,4 @@ font-family: lato, sans-serif;
 }
 .github-link{
 	font-family: sans-serif;
-}
-@media (min-width: 992px)
-.container {
-max-width: 970px;
-}
-@media (min-width: 768px)
-.container {
-max-width: 750px;
 }
